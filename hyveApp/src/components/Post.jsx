@@ -115,12 +115,12 @@ const Post = ({ profilePic, myimage, username, timestamp, message, email, pid}) 
                 </div>
 
                 <div className="postOptions">
-                    <div className="postOpt">
-                        <ThumbUpIcon />
+                    {/* <div className="postOpt">
+                        <ThumbUpIcon/>
                         <p>Like</p>
-                    </div>
+                    </div> */}
                     <div className="postOpt">
-                        <ChatBubbleOutlineIcon/>
+                        <ChatBubbleOutlineIcon disabled/>
                         <p>Comment</p>
                     </div>
                     <div className="postOpt">
