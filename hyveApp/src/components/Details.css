@@ -1,0 +1,13 @@
+.detailsForm{
+    width: 500px;
+    height:100vh;
+    background-color: gray;
+    align-items: center;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

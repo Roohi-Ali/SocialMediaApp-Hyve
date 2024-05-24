@@ -1,0 +1,88 @@
+.header{
+    display:flex;
+    padding:15px 20px;
+    justify-content: space-between;
+    position: sticky;
+    z-index: 100;
+    background-color: white;
+    top:0;
+    box-shadow: 0px 5px 8px -9px rgb(0, 0, 0, 0.75);
+}
+
+.headerLeft{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.headerInput{
+    display: flex;
+    align-items: center;
+    background-color: #eff2f5;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 999px;
+}
+
+.headerInput >input{
+    border: none;
+    background-color: transparent;
+    outline-width: 0;
+}
+
+
+.headerLeft > img{
+    height: 40px;
+}
+
+.headerMiddle{
+    display: flex;
+    flex:1;
+    justify-content: center;
+}
+
+.headerOptions > .MuiSvgIcon-root {
+    color: gray;
+}
+
+.headerOptions:hover > .MuiSvgIcon-root {
+    color: #ff3131;
+    /* color: #2e81f4; */
+}
+
+.headerOptionsActive > .MuiSvgIcon-root {
+    color: #ff3131;
+}
+
+.headerOptionsActive {
+    border-bottom: 4px solid #ff3131;
+}
+.headerOptions{
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    cursor: pointer;
+}
+.headerOptions:hover{
+    background-color: #eff2f5;
+    border-radius: 10px;
+    padding: 0 30px;
+    align-items: center;
+    border-bottom: none;
+}
+
+.headerInfo{
+    display: flex;
+    align-items: center;
+
+}
+
+.headerInfo>h4{
+    margin-left: 10px;
+}
+.headerRight{
+    display: flex;
+}
+.headerRight:hover{
+    color: #ff3131;
+}
