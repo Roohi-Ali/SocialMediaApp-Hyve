@@ -14,10 +14,11 @@ import EditIcon from '@mui/icons-material/Edit';
 import { IconButton , Button } from '@mui/material';
 
 import { db } from '../firebase/firebaseConfig'
-import { doc, deleteDoc , updateDoc} from "firebase/firestore";
+import { doc, deleteDoc , updateDoc, addDoc, collection, serverTimestamp} from "firebase/firestore";
 
 import { auth } from '../firebase/firebaseConfig'
 import { onAuthStateChanged } from 'firebase/auth';
+import CommentComp from './CommentComp';
 
 const Post = ({ profilePic, myimage, username, timestamp, message, email, pid}) => {
     
@@ -47,6 +48,25 @@ const Post = ({ profilePic, myimage, username, timestamp, message, email, pid}) 
         };
     }, []);
 
+
+    // const handleAddComment = ()=>{
+    //     console.log('Comment functionality')
+    //     const a_comment = prompt("Enter a comment:")
+    //     console.log(a_comment)
+    //     addCommentToPostInFirestore(a_comment)
+       
+    // }
+
+    // const addCommentToPostInFirestore = (a_comment)=>{
+    //     const comment = {
+    //         username: user.displayName,
+    //         timestamp: serverTimestamp(),
+    //         comment: a_comment,
+    //         email: user.email,
+    //         photoURL: user.photoURL
+    //     }
+        
+    // }
     const handleDeleteButton = async()=>{
         console.log("Delete this post")
         console.log(pid)
@@ -116,21 +136,21 @@ const Post = ({ profilePic, myimage, username, timestamp, message, email, pid}) 
 
                 <div className="postOptions">
                     {/* <div className="postOpt">
-                        <ThumbUpIcon/>
-                        <p>Like</p>
-                    </div> */}
-                    <div className="postOpt">
-                        <ChatBubbleOutlineIcon disabled/>
-                        <p>Comment</p>
+                        <CommentComp/>
+                        
                     </div>
-                    <div className="postOpt">
-                        <IconButton onClick={updatePost}>
+                    <div className="postOpt" >
+                        <ChatBubbleOutlineIcon />
+                        <p>Add Comment</p>
+                    </div> */}
+                    <div className="postOpt" onClick={updatePost}>
+                        <IconButton >
                             <EditIcon />
                         </IconButton>
                         <p>Edit Post</p>
                     </div>
-                    <div className="postOpt">
-                        <IconButton onClick={handleDeleteButton}>
+                    <div className="postOpt" onClick={handleDeleteButton}>
+                        <IconButton >
                             <DeleteIcon />
                         </IconButton>
                         <p>Delete Post</p>

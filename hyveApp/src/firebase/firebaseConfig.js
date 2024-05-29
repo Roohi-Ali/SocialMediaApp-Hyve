@@ -3,6 +3,8 @@ import { getFirestore } from "firebase/firestore"
 import { getAuth, GoogleAuthProvider, signOut } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
+import { collection, getDocs, limit, query} from 'firebase/firestore'
+
 const firebaseConfig = {
   apiKey: "AIzaSyDApbLwaqyk9V8WUWlnR759_CZTLEELTsw",
   authDomain: "socialmediaapp-hyve.firebaseapp.com",
@@ -23,15 +25,17 @@ const logOutFromFirebase = ()=>{
   signOut(auth)
 }
 
-export { auth, db, storage, provider, logOutFromFirebase}
+
+const getAllFriends = async()=>{
+  const querySnapshot = await getDocs(query(collection(db, "friends")));
+  let newArray = []
+  querySnapshot.docs.map((doc) => {
+    //console.log(JSON.stringify(doc.data()))
+    newArray.push(doc.data())         
+    //newArray = [...newArray, JSON.stringify(doc.data())]
+  })
+  return newArray
+}
 
 
-// const firebaseConfig = {
-//     apiKey: "AIzaSyAIoMauUMvQFQbilYWxBBv2SKrpH2fOQZE",
-//     authDomain: "hyve-app-25c8c.firebaseapp.com",
-//     projectId: "hyve-app-25c8c",
-//     storageBucket: "hyve-app-25c8c.appspot.com",
-//     messagingSenderId: "146689018058",
-//     appId: "1:146689018058:web:30450529f69867cf944c33",
-//     measurementId: "G-17412CJC2N"
-//   };
+export { auth, db, storage, provider, logOutFromFirebase, getAllFriends}

@@ -115,8 +115,8 @@ const LoginComponent = () => {
             </Typography>
 
             <form onSubmit={handleSubmit}>
-
-              <h1>Login to Your Account New</h1>
+        
+              <h1>Login to Your Account</h1>
               <TextField
                 margin="normal"
                 required

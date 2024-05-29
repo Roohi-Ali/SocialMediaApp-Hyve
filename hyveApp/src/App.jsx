@@ -6,6 +6,7 @@ import Home from './components/Home'
 import LoginComponent from './components/LoginComponent'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import PageNotFound from './components/PageNotFound'
+import ViewFriends from './components/ViewFriends'
 
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<LoginComponent />}/>
           <Route path="/register" element={<Register />} /> 
           <Route path="/home" element={<Home />} />
+          <Route path="/viewfriends" element={<ViewFriends />} />
           
           <Route path="*" element={<PageNotFound />} />  
 

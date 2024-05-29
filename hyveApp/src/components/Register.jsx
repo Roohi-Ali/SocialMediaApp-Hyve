@@ -168,7 +168,7 @@ const handleFileChange = (e)=>{
                 required
                 fullWidth
                 name="photoURL"
-                // label="photoURL"
+                label="profile pic avatar link/url"
                 type="url"
                 id="photoURL"
                 // autoComplete="photoURL"

@@ -26,11 +26,10 @@ const CreatePost = () => {
   const [imgurl, setImgurl] = useState("")
 
   useEffect(() => {
-    console.log("Use Effect running from createPost")
+    
     const unsubscribe = onAuthStateChanged(auth, (user) => {
         if (user) {
             setUser(user);
-            console.log(user)
         }
     });
     return () => {
